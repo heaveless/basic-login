@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100px;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 30px 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      form > * {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div>header</div>
+    </div>
+    <div class="content">
+      <form id="loginForm">
+        <div>
+          <label for="username">Username</label>
+          <input type="text" name="username" />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="text" name="password" />
+        </div>
+        <button>Login</button>
+      </form>
+    </div>
+    <script>
+      function showCotent(data) {
+        console.log(data)
+
+        if (data.success) {
+            localStorage.setItem("token", data.token);
+
+            window.location = window.location.href.replace("index", "page");
+        }
+      }
+
+      function login(e) {
+        e.preventDefault();
+
+        const username = document.querySelector("[name='username']").value;
+        const password = document.querySelector("[name='password']").value;
+
+        const url = "http://localhost:5000/login";
+
+        const payload = { username, password };
+
+        axios.post(url, payload).then((data) => showCotent(data.data));
+      }
+
+      const form = document.getElementById("loginForm");
+      form.addEventListener("submit", login);
+    </script>
+  </body>
+</html>
