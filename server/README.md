@@ -28,7 +28,7 @@ pipenv sync
 
 ## Run scripts
 
-*Note that the FLASK_APP environment variable must be set according to the Flask documentation for this command to work.*
+*Note that the <kbd>FLASK_APP</kbd> environment variable must be set according to the Flask documentation for this command to work.*
 
 ```sh
 export FLASK_APP=main.py
