@@ -7,6 +7,11 @@
 ```sh
 mkdir .venv
 ```
+*You need to change the sample file name to a usable one*
+
+```sh
+mv .venv.example .venv
+```
 
 ## Environment scripts
 
