@@ -1,5 +1,7 @@
 # Server
 
+Flask API using JWT token
+
 ## Usages
 
 - Basic-authentication + x-access-token
