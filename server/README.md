@@ -1,5 +1,14 @@
 # Server
 
+## Usages
+
+- Basic-authentication + x-access-token
+- User can signup/create x-access-token and use todo api
+- User have no access to User class
+- Admin Can do CRUD operations on Users, Todo
+- Password will saved as hased password
+- User Can generate the X-access-token for get/post todo api
+
 ## Start scripts
 
 *Before starting, it is necessary to create the <kbd>.venv</kbd> folder to start the development environment locally*
