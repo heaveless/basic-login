@@ -1,11 +1,11 @@
-import { RouterGuard } from 'react-router-guard'
+import { RouterGuard } from "react-router-guard";
 
-import config from './configs/routes'
+import config from "./configs/routes";
 
-import './style';
+import "./style";
 
 export default () => (
-    <div id="app">
-        <RouterGuard config={config}/>
-    </div>
+  <div id="app">
+    <RouterGuard config={config} />
+  </div>
 );

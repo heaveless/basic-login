@@ -1,17 +1,20 @@
 import { h } from "preact";
 
+import { login } from "../services/auth";
+
 const Login = () => {
+  const getData = (form) =>
+    Array.prototype.slice.call(form.elements).reduce((acc, curr) => {
+      if (curr.name) Object.assign(acc, { [curr.name]: curr.value });
+      return acc;
+    }, {});
+
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const payload = Array.prototype.slice
-      .call(e.target.elements)
-      .reduce((acc, curr) => {
-        if (curr.name) Object.assign(acc, { [curr.name]: curr.value });
-        return acc;
-      }, {});
+    const payload = getData(e.target);
 
-    console.log(payload);
+    login(payload).then((res) => console.log(res.data));
   };
 
   return (
