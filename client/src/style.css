@@ -1,0 +1,9 @@
+@import '~normalize.css/normalize';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.blank > * {
+    height: 100vh;
+}
